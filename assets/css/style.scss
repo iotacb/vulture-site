@@ -1,0 +1,329 @@
+@font-face {
+    font-family: "Empires";
+    src: url("../fonts/Empires.ttf");
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    scroll-behavior: smooth;
+
+    color: white;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -2;
+
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(5px);
+}
+
+header {
+
+    width: 100%;
+
+    .navbar-wrapper {
+
+        width: 100%;
+        height: 15vh;
+
+        background-color: rgb(20, 20, 20);
+
+        box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .5);
+
+        position: fixed;
+        top: 0;
+
+        z-index: 10000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+
+            font-family: "Empires";
+
+            font-size: 4em;
+
+            color: white;
+
+            text-shadow: 0px 0px 5px black;
+
+            transition: transform ease .3s;
+
+            &:hover {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                transition: color ease .3s;
+
+                &:hover {
+                    color: rgb(100, 30, 150);
+                }
+            }
+        }
+
+        .navbar {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .navbar-list {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                list-style: none;
+
+                .navbar-item {
+
+                    padding: 2em;
+
+                    a {
+                        color: white;
+
+                        text-decoration: none;
+                        text-transform: uppercase;
+
+                        font-size: 1.5em;
+
+                        &::after {
+                            content: "";
+
+                            display: block;
+
+                            position: relative;
+
+                            bottom: 0;
+                            left: 50%;
+
+                            background-color: white;
+
+                            width: 0;
+                            height: 1px;
+
+                            transition: left ease .3s, width ease .3s;
+                        }
+
+                        &:hover {
+                            &::after {
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    .gallery-wrapper {
+
+        margin-top: 12em;
+        margin-bottom: 10em;
+
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+
+        .video {
+            box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+        }
+
+        .gallery {
+            user-select: none;
+
+            display: flex;
+            align-items: center;
+
+            flex-direction: column;
+
+            h1 {
+                font-size: 4em;
+
+                border-bottom: 4px solid white;
+
+                margin-top: 2em;
+
+                font-weight: 100;
+
+                text-transform: uppercase;
+            }
+
+            .text-box {
+
+                width: 70%;
+
+                background-color: rgba(255, 255, 255, .2);
+
+                box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+
+                backdrop-filter: blur(20px);
+
+                padding: 1em;
+
+                .vulture-span {
+                    font-weight: bolder;
+                    font-size: larger;
+
+                    color: rgb(100, 30, 150);
+
+                    text-transform: uppercase;
+
+                    text-shadow: 0 0 3px black;
+                }
+
+                .chris-span {
+                    font-weight: bolder;
+                    text-decoration: underline;
+
+                    a {
+                        color: white;
+                    }
+                }
+
+                .align-left {
+                    display: block;
+                    text-align: left;
+                }
+
+                .align-right {
+                    display: block;
+                    text-align: right;
+                }
+            }
+
+            .gallery-box {
+                width: 70%;
+
+                background-color: rgba(255, 255, 255, .2);
+
+                box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+
+                backdrop-filter: blur(20px);
+
+                padding: 1em;
+
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+
+                .image {
+                    width: 300px;
+
+                    transition: transform ease .3s;
+
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+
+                    outline: 2px solid white;
+
+                    &:hover {
+                        transform: scale(2) rotate(2deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+
+    width: 100%;
+
+    user-select: none;
+
+    .footer-wrapper {
+
+        position: fixed;
+        bottom: 0;
+
+        width: 100%;
+        height: 5vh;
+
+        background-color: rgb(20, 20, 20);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 0 -10px 20px 5px rgba(0, 0, 0, .5);
+    }
+
+    .discord-icon {
+        margin-left: 1em;
+
+        transition: transform ease .3s, color ease .3s;
+
+        color: white;
+
+        &:hover {
+
+            transform: scale(1.1) rotate(2deg);
+
+            color: rgb(114, 137, 218);
+        }
+    }
+}
+
+.scroller {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: rgba(255, 255, 255, .2);
+
+    backdrop-filter: blur(5px);
+
+    border-radius: 100px;
+
+    position: fixed;
+    top: 85%;
+    right: 1em;
+
+    transition: background-color ease .3s, opacity ease .3s;
+
+    opacity: 1;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, .5);
+    }
+
+    p {
+        font-size: 4em;
+        margin-top: 1.35em;
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
