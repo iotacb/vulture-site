@@ -235,7 +235,7 @@ main {
                 grid-row-gap: 20px;
 
                 .image {
-                    width: 300px;
+                    width: 100%;
 
                     transition: transform ease .3s;
 
@@ -326,4 +326,59 @@ footer {
 
 .hidden {
     opacity: 0;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+        .gallery-wrapper {
+
+            iframe {
+                width: 640px;
+                height: 360px;
+            }
+
+            .gallery {
+
+                .gallery-box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    flex-direction: column;
+
+                    .image {
+                        margin: 1em 0;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        .gallery-wrapper {
+
+            iframe {
+                width: 426px;
+                height: 240px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        .gallery-wrapper {
+
+            iframe {
+                width: 256px;
+                height: 144px;
+            }
+        }
+    }
 }

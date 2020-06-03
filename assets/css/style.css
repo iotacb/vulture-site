@@ -232,7 +232,7 @@ main .gallery-wrapper .gallery .gallery-box {
 }
 
 main .gallery-wrapper .gallery .gallery-box .image {
-  width: 300px;
+  width: 100%;
   -webkit-transition: -webkit-transform ease .3s;
   transition: -webkit-transform ease .3s;
   transition: transform ease .3s;
@@ -324,5 +324,48 @@ footer .discord-icon:hover {
 
 .hidden {
   opacity: 0;
+}
+
+@media screen and (max-width: 900px) {
+  main .gallery-wrapper iframe {
+    width: 640px;
+    height: 360px;
+  }
+  main .gallery-wrapper .gallery .gallery-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .gallery-wrapper .gallery .gallery-box .image {
+    margin: 1em 0;
+  }
+  main .gallery-wrapper .gallery .gallery-box .image:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  main .gallery-wrapper iframe {
+    width: 426px;
+    height: 240px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .gallery-wrapper iframe {
+    width: 256px;
+    height: 144px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

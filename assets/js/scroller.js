@@ -3,7 +3,6 @@ document.getElementById("scroller").onclick = () => {
 }
 
 document.onscroll = () => {
-    console.log(window.pageYOffset);
     var scroller = document.getElementById("scroller");
 
     if (window.pageYOffset > 10) {
