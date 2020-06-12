@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8c1933a3b6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Vulture</title>
 </head>
 
@@ -39,8 +41,8 @@
                     allowfullscreen></iframe>
             </div>
             <div class="gallery">
-                <h1 id="info">Info</h1>
-                <div class="text-box">
+                <h1 id="info" data-aos="fade-up" data-aos-duration="1000">Info</h1>
+                <div class="text-box" data-aos="fade-up" data-aos-duration="1000">
                     <p>
                         <span class="align-left">
                             <span class="vulture-span">Vulture</span> is a 5€ Minecraft cheating client, developed by
@@ -72,8 +74,8 @@
                     </span>
                 </div>
 
-                <h1 id="gallery">Gallery</h1>
-                <div class="gallery-box">
+                <h1 id="gallery" data-aos="fade-up" data-aos-duration="1000">Gallery</h1>
+                <div class="gallery-box" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/1.png" alt="" class="image">
                     <img src="assets/images/2.png" alt="" class="image">
                     <img src="assets/images/3.png" alt="" class="image">
@@ -103,5 +105,8 @@
 </body>
 
 <script src="assets/js/scroller.js"></script>
+<script>
+    AOS.init();
+</script>
 
 </html>

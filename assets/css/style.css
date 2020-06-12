@@ -22,8 +22,6 @@ body {
   background-image: url("../images/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
 }
 
 header {
@@ -233,10 +231,10 @@ main .gallery-wrapper .gallery .gallery-box {
 
 main .gallery-wrapper .gallery .gallery-box .image {
   width: 100%;
-  -webkit-transition: -webkit-transform ease .3s;
-  transition: -webkit-transform ease .3s;
-  transition: transform ease .3s;
-  transition: transform ease .3s, -webkit-transform ease .3s;
+  -webkit-transition: -webkit-transform cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  transition: -webkit-transform cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  transition: transform cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  transition: transform cubic-bezier(0.16, 1, 0.3, 1) 0.4s, -webkit-transform cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   outline: 2px solid white;
