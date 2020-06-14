@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap");
 @font-face {
   font-family: "Empires";
   src: url("../fonts/Empires.ttf");
@@ -13,7 +14,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   scroll-behavior: smooth;
 }
@@ -127,7 +128,7 @@ body main .content-wrapper section {
 
 body main .content-wrapper section h1 {
   font-size: 3rem;
-  font-weight: 100;
+  font-weight: black;
   border-bottom: 1px solid white;
 }
 
