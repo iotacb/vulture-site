@@ -16,6 +16,7 @@ html {
   font-family: sans-serif;
   color: white;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -141,12 +142,44 @@ body main .content-wrapper section#home iframe {
 }
 
 body main .content-wrapper section#about {
+  position: relative;
   background-color: #282828;
+}
+
+body main .content-wrapper section#about .white-rect {
+  position: absolute;
+  display: block;
+  top: -4rem;
+  left: 0;
+  width: 60%;
+  height: 20%;
+  background-color: #3c3c3c;
+}
+
+body main .content-wrapper section#about .white-rect::before {
+  content: "";
+  position: absolute;
+  left: 40%;
+  bottom: -5rem;
+  width: 60%;
+  height: 100%;
+  background-color: #646464;
+}
+
+body main .content-wrapper section#about .white-rect::after {
+  content: "";
+  position: absolute;
+  left: calc(100% - 6rem);
+  bottom: -2rem;
+  width: calc(100% + 6rem);
+  height: 100%;
+  background-color: #505050;
 }
 
 body main .content-wrapper section#about p {
   font-size: 1.2rem;
   padding: 2rem 1rem;
+  z-index: 1;
 }
 
 body main .content-wrapper section#about p span#developer-tag a {
@@ -157,7 +190,29 @@ body main .content-wrapper section#about p span#developer-tag a {
 }
 
 body main .content-wrapper section#screenshots {
+  position: relative;
   background-color: #1e1e1e;
+}
+
+body main .content-wrapper section#screenshots .white-rect {
+  position: absolute;
+  display: block;
+  top: -4rem;
+  left: 0;
+  width: 30%;
+  height: 60%;
+  background-color: #646464;
+}
+
+body main .content-wrapper section#screenshots .white-rect::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 20%;
+  bottom: 50%;
+  width: 200%;
+  height: 120%;
+  background-color: #505050;
 }
 
 body main .content-wrapper section#screenshots .gallery {
@@ -187,7 +242,28 @@ body main .content-wrapper section#screenshots .gallery .screenshot img:hover {
 }
 
 body main .content-wrapper section#buy {
+  position: relative;
   background-color: #282828;
+}
+
+body main .content-wrapper section#buy .white-rect {
+  position: absolute;
+  display: block;
+  width: 20%;
+  height: 30%;
+  left: 40%;
+  background-color: #1e1e1e;
+}
+
+body main .content-wrapper section#buy .white-rect::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120%;
+  height: 70%;
+  left: 90%;
+  top: 60%;
+  background-color: #3c3c3c;
 }
 
 body main .content-wrapper section#buy p {
@@ -377,6 +453,9 @@ body .hidden {
   body main .content-wrapper section#home iframe {
     width: 640px;
     height: 360px;
+  }
+  body main .content-wrapper section#screenshots .white-rect::after {
+    height: 60%;
   }
   body main .content-wrapper section#screenshots .gallery {
     display: -webkit-box;

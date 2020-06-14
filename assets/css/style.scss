@@ -19,6 +19,8 @@ html {
     color: white;
 
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
 }
 
 body {
@@ -148,12 +150,56 @@ body {
                 }
 
                 &#about {
+                    position: relative;
                     background-color: rgb(40, 40, 40);
+
+                    .white-rect {
+                        position: absolute;
+                        display: block;
+
+                        top: -4rem;
+                        left: 0;
+
+                        width: 60%;
+                        height: 20%;
+
+                        background-color: rgb(60, 60, 60);
+
+                        &::before {
+                            content: "";
+
+                            position: absolute;
+
+                            left: 40%;
+                            bottom: -5rem;
+
+                            width: 60%;
+                            height: 100%;
+
+                            background-color: rgb(100, 100, 100);
+                        }
+
+                        &::after {
+                            content: "";
+
+                            position: absolute;
+
+                            left: calc(100% - 6rem);
+                            bottom: -2rem;
+
+                            width: calc(100% + 6rem);
+                            height: 100%;
+
+                            background-color: rgb(80, 80, 80);
+                        }
+                    }
 
                     p {
                         font-size: 1.2rem;
 
                         padding: 2rem 1rem;
+
+                        z-index: 1;
 
                         span {
 
@@ -170,7 +216,35 @@ body {
                 }
 
                 &#screenshots {
+                    position: relative;
                     background-color: rgb(30, 30, 30);
+
+                    .white-rect {
+                        position: absolute;
+                        display: block;
+
+                        top: -4rem;
+                        left: 0;
+
+                        width: 30%;
+                        height: 60%;
+
+                        background-color: rgb(100, 100, 100);
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: block;
+
+                            left: 20%;
+                            bottom: 50%;
+
+                            width: 200%;
+                            height: 120%;
+
+                            background-color: rgb(80, 80, 80);
+                        }
+                    }
 
                     .gallery {
                         display: grid;
@@ -196,7 +270,36 @@ body {
                 }
 
                 &#buy {
+                    position: relative;
                     background-color: rgb(40, 40, 40);
+
+                    .white-rect {
+                        position: absolute;
+
+                        display: block;
+
+                        width: 20%;
+                        height: 30%;
+
+                        left: 40%;
+
+                        background-color: rgb(30, 30, 30);
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+
+                            display: block;
+
+                            width: 120%;
+                            height: 70%;
+
+                            left: 90%;
+                            top: 60%;
+
+                            background-color: rgb(60, 60, 60);
+                        }
+                    }
 
                     p {
                         font-size: 1.2rem;
@@ -398,6 +501,14 @@ body {
                     }
 
                     &#screenshots {
+
+                        .white-rect {
+
+                            &::after {
+                                height: 60%;
+                            }
+                        }
+
                         .gallery {
                             display: flex;
 
