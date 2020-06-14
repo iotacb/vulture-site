@@ -3,131 +3,109 @@
     src: url("../fonts/Empires.ttf");
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
-    font-family: Arial, Helvetica, sans-serif;
+$vultureColor: rgb(100, 30, 150);
 
-    scroll-behavior: smooth;
+html {
+    box-sizing: border-box;
+
+    font-family: sans-serif;
 
     color: white;
+
+    scroll-behavior: smooth;
 }
 
-.background-image {
-    width: 100%;
-    height: 100%;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    z-index: -2;
-
-    background-image: url("../images/bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-header {
+body {
+    padding: 0;
+    margin: 0;
 
     width: 100%;
 
-    .navbar-wrapper {
-
+    header {
         width: 100%;
-        height: 15vh;
 
-        background-color: rgb(20, 20, 20);
 
-        box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .5);
-
-        position: fixed;
-        top: 0;
-
-        z-index: 10000;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-
-            font-family: "Empires";
-
-            font-size: 4em;
-
-            color: white;
-
-            text-shadow: 0px 0px 5px black;
-
-            transition: transform ease .3s;
-
-            &:hover {
-                transform: scale(1.1) rotate(5deg);
-            }
-
-            a {
-                text-decoration: none;
-                color: white;
-
-                transition: color ease .3s;
-
-                &:hover {
-                    color: rgb(100, 30, 150);
-                }
-            }
-        }
-
-        .navbar {
+        nav {
+            z-index: 100000;
+            position: fixed;
+            top: 0;
 
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
 
-            .navbar-list {
+            width: 100%;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            background-color: rgb(20, 20, 20);
 
-                list-style: none;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
 
-                .navbar-item {
+            .logo {
 
-                    padding: 2em;
+                a {
+                    font-family: "Empires";
+                    font-weight: 100;
 
-                    a {
-                        color: white;
+                    font-size: 4em;
 
-                        text-decoration: none;
-                        text-transform: uppercase;
+                    text-shadow: 0px 0px 5px black;
+                    text-decoration: none;
 
-                        font-size: 1.5em;
+                    margin: 0 3rem;
 
-                        &::after {
-                            content: "";
+                    color: white;
+                }
+            }
 
-                            display: block;
+            .list {
+                margin: 0 3rem;
 
-                            position: relative;
+                ul {
+                    list-style: none;
+                    display: flex;
 
-                            bottom: 0;
-                            left: 50%;
+                    li {
+                        padding: 2rem 1rem;
 
-                            background-color: white;
+                        a {
+                            color: white;
 
-                            width: 0;
-                            height: 1px;
+                            text-align: center;
 
-                            transition: left ease .3s, width ease .3s;
-                        }
+                            text-transform: uppercase;
+                            text-decoration: none;
 
-                        &:hover {
+                            font-size: 1rem;
+
                             &::after {
-                                width: 100%;
-                                left: 0;
+                                content: "";
+
+                                display: block;
+
+                                position: relative;
+
+                                bottom: 0;
+                                left: 50%;
+
+                                background-color: white;
+
+                                width: 0;
+                                height: 1px;
+
+                                transition: left ease .1s, width ease .1s;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    left: 0;
+                                    width: 100%;
+                                }
                             }
                         }
                     }
@@ -135,271 +113,224 @@ header {
             }
         }
     }
-}
 
-main {
-    .gallery-wrapper {
-
-        margin-top: 12em;
-        margin-bottom: 10em;
-
-        display: flex;
-        align-items: center;
-
-        flex-direction: column;
-
-        .video {
-            box-shadow: 0 0 20px 0 rgb(0, 0, 0);
-        }
-
-        .gallery {
-            user-select: none;
-
-            display: flex;
-            align-items: center;
-
-            flex-direction: column;
-
-            h1 {
-                font-size: 4em;
-
-                border-bottom: 4px solid white;
-
-                margin-top: 2em;
-
-                font-weight: 100;
-
-                text-transform: uppercase;
-            }
-
-            .text-box {
-
-                width: 70%;
-
-                background-color: rgba(255, 255, 255, .2);
-
-                box-shadow: 0 0 20px 0 rgb(0, 0, 0);
-
-                backdrop-filter: blur(20px);
-
-                padding: 1em;
-
-                .vulture-span {
-                    font-weight: bolder;
-                    font-size: larger;
-
-                    color: rgb(100, 30, 150);
-
-                    text-transform: uppercase;
-
-                    text-shadow: 0 0 3px black;
-                }
-
-                .chris-span {
-                    font-weight: bolder;
-                    text-decoration: underline;
-
-                    a {
-                        color: white;
-                    }
-                }
-
-                .align-left {
-                    display: block;
-                    text-align: left;
-                }
-
-                .align-right {
-                    display: block;
-                    text-align: right;
-                }
-            }
-
-            .gallery-box {
-                width: 70%;
-
-                background-color: rgba(255, 255, 255, .2);
-
-                box-shadow: 0 0 20px 0 rgb(0, 0, 0);
-
-                backdrop-filter: blur(20px);
-
-                padding: 1em;
-
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto;
-                grid-column-gap: 20px;
-                grid-row-gap: 20px;
-
-                .image {
-                    width: 100%;
-
-                    transition: transform cubic-bezier(0.16, 1, 0.3, 1) .4s;
-
-                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-
-                    outline: 2px solid white;
-
-                    &:hover {
-                        transform: scale(2) rotate(2deg);
-                    }
-                }
-            }
-        }
-    }
-}
-
-footer {
-
-    width: 100%;
-
-    user-select: none;
-
-    .footer-wrapper {
-
-        position: fixed;
-        bottom: 0;
-
-        width: 100%;
-        height: 5vh;
-
-        background-color: rgb(20, 20, 20);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        box-shadow: 0 -10px 20px 5px rgba(0, 0, 0, .5);
-    }
-
-    .discord-icon {
-        margin-left: 1em;
-
-        transition: transform ease .3s, color ease .3s;
-
-        color: white;
-
-        &:hover {
-
-            transform: scale(1.1) rotate(2deg);
-
-            color: rgb(114, 137, 218);
-        }
-    }
-}
-
-.scroller {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 60px;
-    height: 60px;
-
-    background-color: rgba(255, 255, 255, .2);
-
-    backdrop-filter: blur(5px);
-
-    border-radius: 100px;
-
-    position: fixed;
-    top: 85%;
-    right: 1em;
-
-    transition: background-color ease .3s, opacity ease .3s;
-
-    opacity: 1;
-
-    &:hover {
-        background-color: rgba(255, 255, 255, .5);
-    }
-
-    p {
-        font-size: 4em;
-        margin-top: 1.35em;
-    }
-}
-
-.loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100000;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    p {
-        font-family: "Empires";
-
-        font-size: 4em;
-
-        animation: colorLoader infinite ease 1s;
-    }
-}
-
-.hidden {
-    opacity: 0;
-}
-
-@media screen and (max-width: 900px) {
     main {
-        .gallery-wrapper {
+        width: 100%;
 
-            iframe {
-                width: 640px;
-                height: 360px;
-            }
+        .content-wrapper {
+            width: 100%;
 
-            .gallery {
+            section {
+                min-height: 100vh;
+                width: 100%;
 
-                .gallery-box {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-                    flex-direction: column;
+                flex-direction: column;
 
-                    .image {
-                        margin: 1em 0;
+                color: white;
 
-                        &:hover {
-                            transform: scale(1.2);
+                h1 {
+                    font-size: 3rem;
+
+                    font-weight: 100;
+                    border-bottom: 1px solid white;
+                }
+
+                &#home {
+                    background-color: rgb(30, 30, 30);
+
+                    iframe {
+                        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
+                    }
+                }
+
+                &#about {
+                    background-color: rgb(40, 40, 40);
+
+                    p {
+                        font-size: 1.2rem;
+
+                        padding: 2rem 1rem;
+
+                        span {
+
+                            &#developer-tag {
+                                a {
+                                    text-decoration: none;
+                                    color: $vultureColor;
+                                    font-weight: bold;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#screenshots {
+                    background-color: rgb(30, 30, 30);
+
+                    .gallery {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: auto;
+                        grid-column-gap: 20px;
+                        grid-row-gap: 20px;
+
+                        .screenshot {
+                            img {
+                                width: 400px;
+
+                                transition: transform .3s ease;
+
+                                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &#buy {
+                    background-color: rgb(40, 40, 40);
+
+                    p {
+                        font-size: 1.2rem;
+
+                        padding: 2rem 1rem;
+
+                        span {
+
+                            &#discord-server,
+                            &#developer-tag {
+                                a {
+                                    text-decoration: none;
+                                    color: $vultureColor;
+                                    font-weight: bold;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+
+                    .discord-images {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            border-radius: 50%;
+
+                            margin: 2rem 3rem;
+
+                            transition: transform .3s ease;
+
+                            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+
+                            &:hover {
+                                transform: scale(1.2);
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
 
-@media screen and (max-width: 700px) {
-    main {
-        .gallery-wrapper {
+    footer {
+        width: 100%;
 
-            iframe {
-                width: 426px;
-                height: 240px;
+        position: fixed;
+        bottom: 0;
+
+        z-index: 10000;
+
+        background-color: rgb(20, 20, 20);
+
+        .footer-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0rem 2rem;
+
+            a {
+                transition: color ease .3s, transform ease .3s;
+
+                color: white;
+
+                padding: .5rem 1rem;
+
+                &:hover {
+                    color: $vultureColor;
+                    transform: rotate(2deg) scale(1.2);
+                }
             }
         }
     }
-}
 
-@media screen and (max-width: 500px) {
-    main {
-        .gallery-wrapper {
+    .loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(20, 20, 20);
 
-            iframe {
-                width: 256px;
-                height: 144px;
-            }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-family: "Empires";
+
+            font-size: 4em;
+
+            animation: colorLoader infinite ease 1s;
         }
+    }
+
+    .scroller {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 60px;
+        height: 60px;
+
+        background-color: rgba(255, 255, 255, .2);
+
+        backdrop-filter: blur(5px);
+
+        border-radius: 100px;
+
+        position: fixed;
+        top: 85%;
+        right: 1em;
+
+        transition: background-color ease .3s, opacity ease .3s;
+        transform: rotate(180deg);
+
+        opacity: 1;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, .5);
+        }
+
+        p {
+            font-size: 4em;
+            margin-top: 1.35em;
+        }
+    }
+
+    .hidden {
+        opacity: 0;
     }
 }
 
@@ -412,5 +343,121 @@ footer {
 
     50% {
         color: rgb(100, 30, 150);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    body {
+        main {
+            .content-wrapper {
+                section {
+                    &#screenshots {
+                        .gallery {
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-rows: auto;
+
+                            padding: 2rem 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+
+        header {
+
+            nav {
+
+                .list {
+                    margin-right: 3rem;
+
+                    ul {
+                        flex-direction: column;
+
+                        li {
+                            padding: 1rem 0rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            .content-wrapper {
+                section {
+
+                    &#home {
+                        iframe {
+                            width: 640px;
+                            height: 360px;
+                        }
+                    }
+
+                    &#screenshots {
+                        .gallery {
+                            display: flex;
+
+                            justify-content: center;
+                            align-items: center;
+
+                            flex-direction: column;
+
+                            .screenshot {
+                                a {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    img {
+                                        width: 80%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    body {
+        main {
+            .content-wrapper {
+                section {
+
+                    &#home {
+                        iframe {
+                            width: 426px;
+                            height: 240px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        main {
+            .content-wrapper {
+                section {
+
+                    &#home {
+                        iframe {
+                            width: 256px;
+                            height: 144px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
