@@ -20,7 +20,6 @@ html {
 
     scroll-behavior: smooth;
 
-    overflow-x: hidden;
 }
 
 body {
@@ -184,10 +183,10 @@ body {
 
                             position: absolute;
 
-                            left: calc(100% - 6rem);
+                            left: 90%;
                             bottom: -2rem;
 
-                            width: calc(100% + 6rem);
+                            width: 60%;
                             height: 100%;
 
                             background-color: rgb(80, 80, 80);
@@ -236,11 +235,11 @@ body {
                             position: absolute;
                             display: block;
 
-                            left: 20%;
+                            left: 40%;
                             bottom: 50%;
 
                             width: 200%;
-                            height: 120%;
+                            height: 60%;
 
                             background-color: rgb(80, 80, 80);
                         }
