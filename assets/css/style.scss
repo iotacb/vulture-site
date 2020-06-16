@@ -113,6 +113,19 @@ body {
                     }
                 }
             }
+
+            #scrolly {
+                display: block;
+
+                position: absolute;
+
+                height: 5px;
+
+                bottom: 0;
+                left: 0;
+
+                background: linear-gradient(to right, rgb(80, 10, 130), rgb(100, 30, 150))
+            }
         }
     }
 
@@ -134,6 +147,8 @@ body {
 
                 color: white;
 
+                overflow: hidden;
+
                 h1 {
                     font-size: 3rem;
 
@@ -142,7 +157,17 @@ body {
                 }
 
                 &#home {
+                    position: relative;
                     background-color: rgb(30, 30, 30);
+
+                    &::before {
+                        content: "home";
+                        position: absolute;
+                        bottom: 0;
+                        color: rgb(40, 40, 40);
+                        font-size: clamp(10rem, 40rem, 20vw);
+                        font-weight: bold;
+                    }
 
                     iframe {
                         box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
@@ -153,45 +178,13 @@ body {
                     position: relative;
                     background-color: rgb(40, 40, 40);
 
-                    .white-rect {
+                    &::before {
+                        content: "about";
                         position: absolute;
-                        display: block;
-
-                        top: -4rem;
-                        left: 0;
-
-                        width: 60%;
-                        height: 20%;
-
-                        background-color: rgb(60, 60, 60);
-
-                        &::before {
-                            content: "";
-
-                            position: absolute;
-
-                            left: 40%;
-                            bottom: -5rem;
-
-                            width: 60%;
-                            height: 100%;
-
-                            background-color: rgb(100, 100, 100);
-                        }
-
-                        &::after {
-                            content: "";
-
-                            position: absolute;
-
-                            left: 90%;
-                            bottom: -2rem;
-
-                            width: 60%;
-                            height: 100%;
-
-                            background-color: rgb(80, 80, 80);
-                        }
+                        bottom: 0;
+                        color: rgb(30, 30, 30);
+                        font-size: clamp(10rem, 40rem, 20vw);
+                        font-weight: bold;
                     }
 
                     p {
@@ -219,31 +212,13 @@ body {
                     position: relative;
                     background-color: rgb(30, 30, 30);
 
-                    .white-rect {
+                    &::before {
+                        content: "screenshots";
                         position: absolute;
-                        display: block;
-
-                        top: -4rem;
-                        left: 0;
-
-                        width: 30%;
-                        height: 60%;
-
-                        background-color: rgb(100, 100, 100);
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            display: block;
-
-                            left: 40%;
-                            bottom: 50%;
-
-                            width: 200%;
-                            height: 60%;
-
-                            background-color: rgb(80, 80, 80);
-                        }
+                        bottom: 0;
+                        color: rgb(40, 40, 40);
+                        font-size: clamp(10rem, 20rem, 20vw);
+                        font-weight: bold;
                     }
 
                     .gallery {
@@ -273,31 +248,26 @@ body {
                     position: relative;
                     background-color: rgb(40, 40, 40);
 
-                    .white-rect {
+                    &::before {
+                        content: "buy";
                         position: absolute;
+                        bottom: 0;
+                        color: rgb(30, 30, 30);
+                        font-size: clamp(10rem, 40rem, 20vw);
+                        font-weight: bold;
+                    }
 
-                        display: block;
+                    .dots {
+                        position: absolute;
+                        fill: rgb(100, 100, 100);
+                        animation: rotate (60s * 10) linear infinite;
+                    }
 
-                        width: 20%;
-                        height: 30%;
-
-                        left: 40%;
-
-                        background-color: rgb(30, 30, 30);
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-
-                            display: block;
-
-                            width: 120%;
-                            height: 70%;
-
-                            left: 90%;
-                            top: 60%;
-
-                            background-color: rgb(60, 60, 60);
+                    @for $i from 1 to 101 {
+                        svg g path:nth-child(#{$i}) {
+                            animation: patternFade 10s ease infinite;
+                            animation-delay: .02s * $i;
+                            animation-fill-mode: both;
                         }
                     }
 
@@ -570,5 +540,27 @@ body {
                 }
             }
         }
+    }
+}
+
+@keyframes patternFade {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(.8);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(.8);
     }
 }

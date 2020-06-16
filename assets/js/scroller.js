@@ -1,6 +1,9 @@
+const scrolly = document.getElementById("scrolly");
 document.getElementById("scroller").onclick = () => {
     window.scrollTo(0, 0);
 }
+
+var totalHeight = document.body.scrollHeight - window.innerHeight;
 
 document.onscroll = () => {
     var scroller = document.getElementById("scroller");
@@ -15,4 +18,5 @@ document.onscroll = () => {
         }
     }
 
+    scrolly.style.width = (window.pageYOffset / totalHeight) * 100 + "%";
 }
