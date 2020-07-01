@@ -19,10 +19,17 @@ html {
   scroll-behavior: smooth;
 }
 
+::-moz-selection {
+  background-color: #641e96;
+}
+
+::selection {
+  background-color: #641e96;
+}
+
 body {
   padding: 0;
   margin: 0;
-  width: 100%;
 }
 
 body header {
@@ -158,8 +165,9 @@ body main .content-wrapper section#home::before {
 }
 
 body main .content-wrapper section#home iframe {
-  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.2);
+  outline: 1px solid #641e96;
 }
 
 body main .content-wrapper section#about {
@@ -1267,7 +1275,7 @@ body .scroller {
   background-color: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  border-radius: 100px;
+  border-radius: 50%;
   position: fixed;
   top: 85%;
   right: 1em;
@@ -1276,6 +1284,11 @@ body .scroller {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   opacity: 1;
+}
+
+body .scroller svg {
+  -webkit-animation: hovering 2s cubic-bezier(0.47, 0.11, 0.29, 1.06) infinite;
+          animation: hovering 2s cubic-bezier(0.47, 0.11, 0.29, 1.06) infinite;
 }
 
 body .scroller:hover {
@@ -1289,26 +1302,6 @@ body .scroller p {
 
 body .hidden {
   opacity: 0;
-}
-
-@-webkit-keyframes colorLoader {
-  0%,
-  100% {
-    color: white;
-  }
-  50% {
-    color: #641e96;
-  }
-}
-
-@keyframes colorLoader {
-  0%,
-  100% {
-    color: white;
-  }
-  50% {
-    color: #641e96;
-  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -1386,6 +1379,26 @@ body .hidden {
   }
 }
 
+@-webkit-keyframes colorLoader {
+  0%,
+  100% {
+    color: white;
+  }
+  50% {
+    color: #641e96;
+  }
+}
+
+@keyframes colorLoader {
+  0%,
+  100% {
+    color: white;
+  }
+  50% {
+    color: #641e96;
+  }
+}
+
 @-webkit-keyframes patternFade {
   0%,
   100% {
@@ -1425,6 +1438,30 @@ body .hidden {
   100% {
     -webkit-transform: rotate(360deg) scale(0.8);
             transform: rotate(360deg) scale(0.8);
+  }
+}
+
+@-webkit-keyframes hovering {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes hovering {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
   }
 }
 /*# sourceMappingURL=style.css.map */
